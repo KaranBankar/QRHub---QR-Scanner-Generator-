@@ -57,6 +57,7 @@ class GenerateFragment : Fragment() {
 
             // Share option
             binding.shareButton.visibility = View.VISIBLE
+            binding.downloadButton.visibility= View.VISIBLE
             binding.shareButton.setOnClickListener {
                 shareQRCode(bitmap, content)
             }

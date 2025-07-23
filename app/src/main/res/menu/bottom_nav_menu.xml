@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_scan"
-        android:icon="@android:drawable/ic_menu_camera"
+        android:icon="@drawable/ic_qr_code_scanner"
         android:title="Scan" />
     <item
         android:id="@+id/nav_generate"
-        android:icon="@android:drawable/ic_menu_add"
+        android:icon="@drawable/ic_add_circle"
         android:title="Generate" />
     <item
         android:id="@+id/nav_history"
-        android:icon="@android:drawable/ic_menu_recent_history"
+        android:icon="@drawable/ic_history"
         android:title="History" />
 </menu>

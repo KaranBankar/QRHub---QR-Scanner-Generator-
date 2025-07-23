@@ -2,35 +2,153 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/white"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/input_text"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate QR"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter text or URL" />
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="4"
+        android:foregroundGravity="center"
+        android:orientation="horizontal"
+        android:rowCount="2">
+
+        <!-- Row 1 -->
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/instagram" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/facebook" />
+
+        <!-- Row 2 -->
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/phone" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/whatsapp" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/tiktok" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/telegram" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/binding" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/text" />
+
+    </GridLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        app:cardElevation="5dp"
+        app:strokeColor="@color/teal_700"
+        app:strokeWidth="1dp">
+
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="#005B7B7A"
+            android:hint=" Enter text or URL" />
+    </com.google.android.material.card.MaterialCardView>
+
 
     <Button
         android:id="@+id/generate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/teal_700"
         android:layout_gravity="center"
         android:text="Generate QR Code" />
 
     <ImageView
         android:id="@+id/qr_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="20dp" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+        
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/share_button"
+            android:src="@drawable/send"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="90dp"/>
 
-    <Button
-        android:id="@+id/share_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Share QR Code"
-        android:visibility="gone" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/download_button"
+            android:src="@drawable/download"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_marginLeft="70dp"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

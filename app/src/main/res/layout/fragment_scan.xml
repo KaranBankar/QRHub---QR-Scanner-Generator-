@@ -5,24 +5,43 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <com.journeyapps.barcodescanner.BarcodeView
-        android:id="@+id/barcode_scanner"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <Button
-        android:id="@+id/scanButton"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Scan" />
+        android:text="Scan QR"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <FrameLayout
+        android:id="@+id/scanner_container"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_marginTop="20dp">
+
+        <!-- Barcode Scanner Preview -->
+        <com.journeyapps.barcodescanner.BarcodeView
+            android:id="@+id/barcode_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Animated Scanner Line -->
+        <ImageView
+            android:id="@+id/scanner_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="top"
+            android:background="@android:color/holo_red_light" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/scanResultText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         android:text="Scan result will appear here"
         android:textAlignment="center" />
-
 </LinearLayout>
