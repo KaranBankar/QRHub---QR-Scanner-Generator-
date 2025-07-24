@@ -3,6 +3,8 @@ package com.example.qrhub
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -66,16 +68,40 @@ class MainActivity : AppCompatActivity() {
         val menuView = navView.inflateHeaderView(R.layout.custom_drawer)
 
         menuView.findViewById<LinearLayout>(R.id.nav_home).setOnClickListener {
-            Toast.makeText(this,"Home Clicked", Toast.LENGTH_SHORT).show()
             drawerLayout.closeDrawer(GravityCompat.START)
         }
         menuView.findViewById<LinearLayout>(R.id.nav_policies).setOnClickListener {
+            showPoliciesDialog()
+            drawerLayout.closeDrawer(GravityCompat.START)
+        }
+        menuView.findViewById<LinearLayout>(R.id.nav_about_us).setOnClickListener {
+
+        }
+        menuView.findViewById<LinearLayout>(R.id.nav_update).setOnClickListener {
 
         }
 
 
     }
 
+    private fun showPoliciesDialog() {
+        // Inflate the custom dialog layout
+        val dialogView = layoutInflater.inflate(R.layout.dialog_policies, null)
+
+        // Create the AlertDialog
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(true)
+            .create()
+
+        // Set up the dismiss button
+        dialogView.findViewById<View>(R.id.dialog_dismiss_button).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        // Show the dialog
+        dialog.show()
+    }
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
