@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.qrhub"
+    namespace = "com.devkaran.qrhub"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.qrhub"
+        applicationId = "com.devkaran.qrhub"
         minSdk = 25
         targetSdk = 35
         versionCode = 1
