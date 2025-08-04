@@ -46,4 +46,13 @@
         android:textSize="15sp"
         android:text="Scan result will appear here"
         android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/uploadQrButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Upload QR Code from Gallery"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/teal_700" />
 </LinearLayout>
