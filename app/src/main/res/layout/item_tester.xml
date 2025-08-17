@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/rounded_dialog_bg"
+    android:padding="12dp"
+    android:layout_margin="8dp"
+    android:gravity="center_vertical">
+
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/profile"
+        android:layout_marginLeft="10dp"
+        android:contentDescription="LinkedIn"/>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Tester Name"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/btnLinkedIn"
+        android:layout_width="35dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/linkedin"
+        android:contentDescription="LinkedIn"/>
+
+
+
+    <ImageView
+        android:id="@+id/btnGithub"
+        android:layout_width="35dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/github"
+        android:contentDescription="Github"/>
+</LinearLayout>

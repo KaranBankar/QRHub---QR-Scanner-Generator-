@@ -20,83 +20,131 @@
         android:textSize="16sp" />
 
 
-    <RadioGroup
-        android:id="@+id/colorPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="-10dp"
-        android:layout_marginTop="8dp">
+<!--    <RadioGroup-->
+<!--        android:id="@+id/colorPicker"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:layout_marginBottom="-10dp"-->
+<!--        android:layout_marginTop="8dp">-->
 
 
-        <RadioButton
-            android:id="@+id/colorRed"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="17dp"
-            android:text="" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/colorRed"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="17dp"-->
+<!--            android:text="" />-->
 
-        <RadioButton
-            android:id="@+id/colorGreen"
-            android:layout_width="50dp"
-            android:layout_marginLeft="17dp"
-            android:layout_height="50dp"
-            android:text="" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/colorGreen"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_marginLeft="17dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:text="" />-->
 
-        <RadioButton
-            android:id="@+id/colorBlue"
-            android:layout_width="50dp"
-            android:layout_marginLeft="19dp"
-            android:layout_height="50dp"
-            android:text="" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/colorBlue"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_marginLeft="19dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:text="" />-->
 
-        <RadioButton
-            android:id="@+id/colorBlack"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:text=""
-            android:checked="true" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/colorBlack"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:text=""-->
+<!--            android:checked="true" />-->
 
-    </RadioGroup>
+<!--    </RadioGroup>-->
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-50dp"
+        android:layout_marginTop="20dp"
         android:columnCount="4"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:rowCount="2">
 
-        <View
-            android:id="@+id/color1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="#FF0000" />
+<!--        <View-->
+<!--            android:id="@+id/color1"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="#FF0000" />-->
 
-        <View
-            android:id="@+id/color2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="#00FF00" />
+<!--        <View-->
+<!--            android:id="@+id/color2"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="#00FF00" />-->
 
-        <View
-            android:id="@+id/color3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="#0000FF" />
+<!--        <View-->
+<!--            android:id="@+id/color3"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="#0000FF" />-->
 
-        <View
-            android:id="@+id/color4"
+<!--        <View-->
+<!--            android:id="@+id/color4"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="#000000" />-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardRed"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:background="#000000" />
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="4dp"
+            app:strokeColor="#9C27B0"
+            app:cardBackgroundColor="#FF0000"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardGreen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#00FF00"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#9C27B0"
+            app:strokeWidth="4dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBlue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="4dp"
+            app:strokeColor="#9C27B0"
+            app:cardBackgroundColor="#0000FF"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBlack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#000000"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp"
+            app:strokeColor="#9C27B0"
+            app:strokeWidth="4dp" />
     </GridLayout>
 
     <!-- Input Card -->

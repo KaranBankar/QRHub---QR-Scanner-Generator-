@@ -76,35 +76,35 @@
 
 
 
-        <LinearLayout
-            android:id="@+id/nav_update"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            android:background="?android:selectableItemBackground">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_rating" />
-            <TextView
-                android:layout_marginStart="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="Rate Us"
-                android:textSize="16sp" />
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:background="#000000"
-            android:backgroundTint="#999929EA"/>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/nav_update"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="12dp"-->
+<!--            android:background="?android:selectableItemBackground">-->
+<!--            <ImageView-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:src="@drawable/ic_rating" />-->
+<!--            <TextView-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:text="Rate Us"-->
+<!--                android:textSize="16sp" />-->
+<!--        </LinearLayout>-->
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_marginBottom="2dp"-->
+<!--            android:background="#000000"-->
+<!--            android:backgroundTint="#999929EA"/>-->
         <!-- Rate Us -->
         <LinearLayout
-            android:id="@+id/nav_rate"
+            android:id="@+id/nav_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -218,7 +218,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Version : 1.0.0"
+            android:text="Version : 2.0.0"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:textStyle="bold|normal"/>

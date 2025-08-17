@@ -19,6 +19,7 @@ import com.devkaran.qrhub.databinding.FragmentGenerateBinding
 import com.devkaran.qrhub.dataclass.QRCode
 import com.devkaran.qrhub.model.QRCodeViewModel
 import com.devkaran.qrhub.model.QRCodeViewModelFactory
+import com.google.android.material.card.MaterialCardView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import java.io.File
@@ -31,6 +32,9 @@ class GenerateFragment : Fragment() {
     private lateinit var viewModel: QRCodeViewModel
     private var generatedBitmap: Bitmap? = null
 
+    // store selected color (default = Black)
+    private var selectedColor: Int = Color.BLACK
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,6 +43,8 @@ class GenerateFragment : Fragment() {
         _binding = FragmentGenerateBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this, QRCodeViewModelFactory(requireActivity().application))
             .get(QRCodeViewModel::class.java)
+
+        setupColorPicker()
 
         binding.generateButton.setOnClickListener {
             val content = binding.inputText.text.toString()
@@ -68,17 +74,40 @@ class GenerateFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Setup color picker (MaterialCardViews) with stroke selection
+     */
+    private fun setupColorPicker() {
+        val colorCards = listOf(
+            binding.cardRed to Color.RED,
+            binding.cardGreen to Color.GREEN,
+            binding.cardBlue to Color.BLUE,
+            binding.cardBlack to Color.BLACK
+        )
+
+        // default select Black
+        updateSelectedColor(binding.cardBlack, Color.BLACK, colorCards)
+
+        colorCards.forEach { (card, color) ->
+            card.setOnClickListener {
+                updateSelectedColor(card, color, colorCards)
+            }
+        }
+    }
+
+    private fun updateSelectedColor(
+        selectedCard: MaterialCardView,
+        color: Int,
+        allCards: List<Pair<MaterialCardView, Int>>
+    ) {
+        selectedColor = color
+        allCards.forEach { (card, _) ->
+            card.strokeWidth = if (card == selectedCard) 6 else 0
+        }
+    }
+
     private fun generateQRCode(content: String) {
         try {
-            val selectedColorId = binding.colorPicker.checkedRadioButtonId
-            val selectedColor = when (selectedColorId) {
-                R.id.colorRed -> Color.RED
-                R.id.colorGreen -> Color.GREEN
-                R.id.colorBlue -> Color.BLUE
-                R.id.colorBlack -> Color.BLACK
-                else -> Color.BLACK
-            }
-
             val multiFormatWriter = MultiFormatWriter()
             val bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE, 400, 400)
             val width = bitMatrix.width
@@ -133,7 +162,6 @@ class GenerateFragment : Fragment() {
             contentValues.put(MediaStore.Images.Media.IS_PENDING, 0)
             resolver.update(uri, contentValues, null, null)
 
-            // Notify gallery of new file
             requireContext().sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri))
 
             Toast.makeText(requireContext(), "QR code saved to Gallery", Toast.LENGTH_SHORT).show()
